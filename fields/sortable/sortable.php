@@ -8,8 +8,8 @@ if ( ! class_exists( 'AVA_Field_Sortable' ) ) {
      * Sortable field
      *
      * @category   Wordpress
-     * @package    AVA-Fields
-     * @author     Viktor Sedzialo ( viktor.sedzialo@gmail.com )
+     * @package    ava-fields
+     * @author     Viktor Sedzialo <viktor.sedzialo@gmail.com>
      * @version    Release: 1.0.0
      * @since      Class available since Release 1.0.0
      */
@@ -29,7 +29,11 @@ if ( ! class_exists( 'AVA_Field_Sortable' ) ) {
 		    
 		    if (!empty($value) && is_array($value)) {
 		        $items = [];
-		        foreach($value as $item) $items[$item] = $this->params['items'][$item];
+                foreach($value as $item) {
+                    if (isset($this->params['items'][$item])) {
+                        $items[$item] = $this->params['items'][$item];
+                    }
+                }
             } else
                 $items = $this->params['items'];
 		    

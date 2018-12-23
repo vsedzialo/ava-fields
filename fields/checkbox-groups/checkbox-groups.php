@@ -8,8 +8,8 @@ if (!class_exists( 'AVA_Field_Checkbox_Groups' )) {
      * Checkbox Groups field
      *
      * @category   Wordpress
-     * @package    AVA-Fields
-     * @author     Viktor Sedzialo ( viktor.sedzialo@gmail.com )
+     * @package    ava-fields
+     * @author     Viktor Sedzialo <viktor.sedzialo@gmail.com>
      * @version    Release: 1.0.0
      * @since      Class available since Release 1.0.0
      */

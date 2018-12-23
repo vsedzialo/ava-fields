@@ -1,11 +1,31 @@
 <?php
-/*
-Plugin Name: AVA Fields
-Plugin URI: http://fields.ava-team.com
-Description: Flexible library to create custom settings for Wordpress themes and plugins
-Version: 1.0.0
-Author: Viktor Sedzialo ( viktor.sedzialo@gmail.com )
-*/
+/**
+ * AVA Fields plugin for WordPress
+ *
+ * @package   ava-fields
+ * @link      https://github.com/vsedzialo/ava-fields
+ * @author    Viktor Sedzialo <viktor.sedzialo@gmail.com>
+ * @copyright 2018 Viktor Sedzialo
+ * @license   GPL v2 or later
+ *
+ * Plugin Name:  AVA Fields
+ * Description:  Powerful fields manager
+ * Version:      1.0.0
+ * Plugin URI:   https://github.com/vsedzialo/ava-fields
+ * Author URI:   https://github.com/vsedzialo
+ * Author:       Viktor Sedzialo <viktor.sedzialo@gmail.com>
+ * Text Domain:  ava-fields
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
 
 /**
  * Autoload register
@@ -14,10 +34,7 @@ Author: Viktor Sedzialo ( viktor.sedzialo@gmail.com )
  */
 spl_autoload_register( function ( $class ) {
 
-    // project-specific namespace prefix
     $prefix = 'AVAFields\\';
-
-    // base directory for the namespace prefix
     $base_dir = __DIR__ . '/app/';
 
     // does the class use the namespace prefix?
@@ -29,10 +46,6 @@ spl_autoload_register( function ( $class ) {
 
     // get the relative class name
     $relative_class = substr( $class, $len );
-
-    // replace the namespace prefix with the base directory, replace namespace
-    // separators with directory separators in the relative class name, append
-    // with .php
     $file = $base_dir . str_replace( ['\\'], ['/'], $relative_class ) . '.php';
 
     // if the file exists, require it
